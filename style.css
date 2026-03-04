@@ -1,0 +1,306 @@
+:root {
+    --primary: #6b8e23;        
+    --primary-light: #f0f4ef;
+    --slate: #2f3e46;         
+    --text-muted: #667b68;    
+    --bg-body: #f2f1ee;           
+    --white: #ffffff;
+    --border: rgba(47, 62, 70, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--slate);
+    line-height: 1.6;
+    background-color: var(--bg-body);
+
+    background-image: 
+        linear-gradient(var(--border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border) 1px, transparent 1px),
+        linear-gradient(rgba(107, 142, 35, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(107, 142, 35, 0.03) 1px, transparent 1px);
+    background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+    
+    background-attachment: fixed; 
+}
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* HEADER */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: var(--white); /* Now solid white, same as footer */
+    border-bottom: 1px solid var(--border);
+}
+nav {
+    display: flex; /* Aligns logo and links horizontally */
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.logo span { color: var(--primary); }
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--slate);
+    
+    /* NEW NAV FONT */
+    font-family: 'Montserrat', sans-serif; 
+    font-size: 0.75rem;     /* Smaller font size looks more premium */
+    text-transform: uppercase; /* All caps for a clean, label look */
+    letter-spacing: 1.5px;  /* Spacing out letters for "Arts & Crafts" detail */
+    font-weight: 700;
+    
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+    letter-spacing: 2.5px; /* Subtle expansion on hover for "interactivity" */
+}
+/* HERO & UNIFIED BOXES */
+.hero {
+    padding: 4rem 0 2rem; 
+}
+
+.eyebrow {
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    color: var(--primary);
+    font-weight: 700;
+}
+
+h1 {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    line-height: 1.1;
+    margin: 1rem 0;
+    font-weight: 800;
+}
+
+.gradient-text {
+    background: linear-gradient(to right, var(--primary), #84a59d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Unified styling for Hobby and About to show design patterns */
+.hobby-box, .about-content {
+    background: var(--white);
+    border-left: 5px solid var(--primary);
+    padding: 2.5rem;
+    border-radius: 0 20px 20px 0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    border-top: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    transition: transform 0.3s ease;
+}
+
+.hobby-box:hover, .about-content:hover {
+    transform: translateX(8px);
+}
+
+.hobby-list {
+    margin-top: 1rem;
+    padding-left: 1.2rem;
+    color: var(--text-muted);
+}
+
+
+/* SECTIONS & GRID (Responsive Layouts) */
+#about, #projects, #contact {
+    padding: 4rem 0;
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.section-title::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+}
+
+.project-grid {
+    display: grid; /* Modern responsive grid */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    padding: 2.5rem;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+}
+
+.tech-badge {
+    font-size: 0.65rem;
+    background: var(--primary-light);
+    color: var(--primary);
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-weight: 700;
+}
+
+.btn-link {
+    text-decoration: none;
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-top: 1.5rem;
+}
+
+/* CONTACT */
+.contact-card {
+    background: var(--slate);
+    color: var(--white);
+    padding: 4rem;
+    border-radius: 30px;
+    
+    /* 1. Set a default transparent border so it doesn't "jump" on hover */
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    
+    /* 2. Smooth transition matching your project cards */
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.contact-card:hover {
+    /* 3. The "Lift" effect from your project cards */
+    transform: translateY(-8px); 
+    
+    /* 4. The Outline Effect: High-visibility Sage Green */
+    border-color: var(--primary); 
+    
+    /* 5. The Shadow: Slightly deeper to account for the dark card weight */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+.contact-card:hover .submit-btn {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+.form-row { display: flex; gap: 1rem; margin-bottom: 1rem; }
+
+input, textarea {
+    width: 100%;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: white;
+    font-family: inherit;
+    margin-bottom: 1rem;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 1.2rem;
+    background: var(--white);
+    color: var(--slate);
+    border: none;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.submit-btn:hover {
+    background: var(--primary);
+    color: white;
+}
+
+/* FOOTER*/
+footer {
+    padding: 4rem 0;
+    background-color: var(--white);
+    border-top: 1px solid var(--border);
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.social-links {
+    display: flex;             /* Matches the Flexbox logic of the nav */
+    justify-content: center;   /* Centers the links horizontally */
+    gap: 2rem;                 /* EXACT same spacing as your nav-links */
+    margin-bottom: 1.5rem;
+}
+
+.social-links a {
+    text-decoration: none;
+    color: var(--slate);
+    
+    /* Font Styling */
+    font-family: 'Montserrat', sans-serif; 
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px; 
+    font-weight: 700;
+    
+    /* Animation */
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--primary);
+    letter-spacing: 2.5px;      /* Exact match for the hover effect */
+}
+footer p {
+    font-family: 'Montserrat', sans-serif; /* Consistent branding */
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 400;
+    margin-top: 1rem;
+}
+/* RESPONSIVENESS (Mobile Optimization) */
+@media (max-width: 768px) {
+    .nav-links { display: none; } /* Hide desktop nav */
+    .form-row { flex-direction: column; }
+    .contact-card { padding: 2rem; }
+    .hobby-box, .about-content { padding: 1.5rem; }
+}
