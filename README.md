@@ -1,15 +1,15 @@
 # Portfolio Website Project - Week 1 of Vineyard Program
 ## Project Description
-This is a basic personal portfolio website developed using HTML and CSS. It includes sections for About me, hobby, technical skills, projects, and contact box.
+This is a basic personal portfolio website developed using HTML and CSS. It includes sections for my favourite hobby, About me, projects, and contact box.
 
 ## Implementation Details
 - HTML5: Used semantic elements for structure.
-- CSS3: Used for styling, layout, and responsive design.
+- CSS3: Used for styling, layout, and design.
 
 ## File Structure
 - index.html: Main HTML document.
 - style.css: Stylesheet for the website.
-- .gitignore: File to ignore unnecessary folders (like node_modules).
+- .gitignore: File to ignore unnecessary folders.
 - README.md: Project documentation.
 
 ## How to Run
